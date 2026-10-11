@@ -261,3 +261,91 @@ select, input[type=number], input[type=text] {
 }
 .empty { text-align: center; color: var(--ink-2); padding: 40px 10px; }
 .score-big { font-size: 46px; font-weight: 800; line-height: 1.1; }
+
+/* ---------- 平板与手机 ---------- */
+@media (max-width: 900px) {
+  .topbar { gap: 10px; padding: 10px 16px; flex-wrap: wrap; }
+  .tabs { order: 3; width: 100%; margin: 0; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
+  .tabs button { flex: 0 0 auto; white-space: nowrap; }
+  .practice-wrap { grid-template-columns: 220px minmax(0, 1fr); }
+  .practice-wrap > .side:last-child { grid-column: 1 / -1; }
+  .exam-wrap { grid-template-columns: minmax(0, 1fr) 260px; }
+  .grid.c4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 14px; line-height: 1.6; }
+  .topbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; padding: 8px 12px 6px; }
+  .brand { min-width: 0; gap: 8px; }
+  .logo { width: 32px; height: 32px; border-radius: 8px; font-size: 17px; }
+  .brand-text strong { font-size: 15px; white-space: nowrap; }
+  .brand-text span { display: none; }
+  .topbar-right { gap: 6px; }
+  .icon-btn { padding: 5px 8px; font-size: 13px; }
+  .tabs { grid-column: 1 / -1; gap: 5px; padding: 4px 0 3px; scrollbar-width: thin; }
+  .tabs button { padding: 6px 10px; font-size: 13px; }
+
+  main { padding: 12px 10px 36px; }
+  .card { padding: 14px 12px; margin-bottom: 12px; border-radius: 10px; }
+  .card h2 { font-size: 16px; }
+  .row, .practice-wrap, .exam-wrap { display: flex; flex-direction: column; gap: 12px; }
+  .grid { gap: 10px; }
+  .grid.c3, .grid.c4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .hero { padding: 20px 16px; margin-bottom: 12px; border-radius: 10px; }
+  .hero h1 { font-size: 21px; line-height: 1.4; }
+  .hero p { font-size: 13px; }
+  .hero .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 8px; margin-top: 15px; }
+  .hero .hero-stats b { font-size: 21px; }
+  .hero .hero-stats span { font-size: 11px; }
+  .mode-card { padding: 14px; }
+  .mode-card .big { font-size: 25px; }
+
+  .side { position: static; max-height: none; width: 100%; overflow: visible; }
+  .practice-wrap > .side:last-child { display: contents; }
+  .cat-item { min-height: 40px; padding: 8px 10px; }
+  .q-head { gap: 6px; align-items: center; }
+  .q-head .spacer { display: none; }
+  .q-type { width: 100%; font-size: 12px; }
+  .q-stem { font-size: 16px; line-height: 1.75; overflow-wrap: anywhere; }
+  .opts { gap: 8px; margin-top: 12px; }
+  .opt { gap: 10px; padding: 10px; font-size: 15px; line-height: 1.6; }
+  .opt .key { flex-basis: 24px; width: 24px; height: 24px; }
+  .match-table { font-size: 13px; }
+  .match-table td { padding: 6px 7px; overflow-wrap: anywhere; }
+  .blank-input { font-size: 16px; }
+  .q-foot { gap: 8px; margin-top: 14px; }
+  .q-foot .spacer, .q-foot .muted { display: none; }
+  .q-foot .btn { flex: 1 1 calc(50% - 4px); min-height: 42px; padding: 8px; }
+  .btn { min-height: 40px; padding: 8px 13px; }
+  .btn.small { min-height: 34px; padding: 5px 9px; }
+  .btn-row { gap: 8px; }
+  .btn-row .btn { flex: 1 1 auto; }
+
+  .sheet { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .sheet button { min-height: 34px; padding: 4px 0; }
+  .exam-sheet { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+  .exam-top { position: static; gap: 8px; padding: 10px 12px; margin-bottom: 12px; }
+  .exam-top .spacer { display: none; }
+  .timer { font-size: 19px; }
+
+  table.tbl { font-size: 12px; }
+  table.tbl th, table.tbl td { padding: 7px 5px; overflow-wrap: anywhere; }
+  .progress-bar { min-width: 54px; }
+  pre.code { padding: 12px; font-size: 12px; max-height: 440px; }
+  .flag-box { font-size: 13px; }
+
+  .modal-mask { align-items: end; }
+  .modal { width: 100%; max-height: 88vh; border-radius: 14px 14px 0 0; }
+  .modal-head, .modal-body, .modal-foot { padding-left: 14px; padding-right: 14px; }
+  .modal-foot .btn { flex: 1 1 auto; }
+  .setting-row { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .toast { bottom: 18px; width: calc(100% - 24px); text-align: center; }
+  .score-big { font-size: 40px; }
+}
+
+@media (max-width: 380px) {
+  .grid.c3, .grid.c4 { grid-template-columns: 1fr; }
+  .hero .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .topbar-right .icon-btn { padding: 5px 6px; }
+}
